@@ -4,7 +4,7 @@ package com.bridzelabs.cabinvoicegenerator;
  * @author :Archana
  * @version :1.0
  * @since :14/04/2022
- *
+ * <p>
  * purpose: The cab service is a subscription based cap service, where the customer books a cab, and pays the bill
  * at the end of the month.
  */
@@ -25,5 +25,17 @@ public class CabInvoiceGenerator {
         }
         return totalFare;
     }
+
+    public double calculateFareForMultipleRides(Ride[] rides) {
+
+        double totalFare = 0.0;
+
+        for (Ride ride : rides) {
+            totalFare = CalculateFare(ride.getDistance(), ride.getTime());
+        }
+
+        return totalFare;
+    }
+
 
 }
